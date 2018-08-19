@@ -72,11 +72,14 @@ nav h1 a {
     font-size: 17px;
     margin: 0;
     width: calc(50% - 80px);
+
+
 }
 
 /* Display list items side by side */
 #breadcrumb li {
     display: inline;
+
 }
 
 /* Add a slash symbol (/) before/behind each list item */
@@ -189,7 +192,11 @@ nav h1 a {
 }
 
 /* ====================== Restaurant Details ====================== */
+.inside {
+	overflow: auto;
 
+
+}
 
 .inside header {
   position: fixed;
@@ -199,28 +206,26 @@ nav h1 a {
 
 }
 .inside #map-container {
-  background: blue none repeat scroll 0 0;
+	background: blue none repeat scroll 0 0;
   height: 87%;
   position: fixed;
   right: 0;
   top: 80px;
   width: 50%;
-	display: flex;
-
-
 
 }
 .inside #map {
   background-color: #ccc;
   height: 100%;
-  width: 100%;
-
+  width: auto;
+  margin: auto;
 
 }
 .inside #footer {
   bottom: 0;
-  position: absolute;
-  width: 50%;
+  position: fixed;
+  width: 100%;
+	height: auto;
 }
 #restaurant-name {
   color: #f18200;
@@ -231,9 +236,14 @@ nav h1 a {
   margin: 15px 0 30px;
   text-transform: uppercase;
   line-height: 1.1;
+
 }
 #restaurant-img {
-	width: 90%;
+	max-width: 100%; /*prevents image from scaling up*/
+	height: auto;
+	padding: 0;
+	margin: 0;
+
 }
 #restaurant-address {
   font-size: 12pt;
@@ -250,7 +260,7 @@ nav h1 a {
   padding: 2px 0;
   text-align: center;
   text-transform: uppercase;
-	width: 90%;
+	max-width: 100%;
 }
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
@@ -302,20 +312,29 @@ nav h1 a {
 	}
 
 }
+/*=======================INSIDE========================*/
+/*SMALLEST VIEWPORT*/
+@media screen and (max-width: 400px) {
+	.inside #map-container{
+		position: static;
+    margin-top: 150px;
+	  margin-left: 20px;
+		height: 200px;
+		width: auto;
 
-@media screen and (max-width: 925px) {
-	#restaurant-img{
-		width: 50%;
-	}
-	#restaurant-cuisine{
-		width: 50%;
 	}
 
-}
-/*
-@media screen and (max-width: 1260) {
-	#reviews-list{
-		width: 50%;
+ #breadcrumb{
+	 width: 100%;
+
 	}
+
+	#reviews-container, #restaurant-hours{
+		width: auto;
+	}
+
+
+
+
 
 }
